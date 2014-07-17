@@ -1,0 +1,20 @@
+{
+    "name": "mean-upload",
+    "version": "0.0.1",
+    "description": "Some description of mean-upload",
+    "author": {
+        "name": "mean scaffold"
+    },
+    "mean": "0.3.3",
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.4.x"
+    },
+    "scripts": {
+        "postinstall": "node ../../node_modules/bower/bin/bower install"
+    },
+    "dependencies": {
+        "connect-multiparty": "latest"
+    },
+    "license": "MIT"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "mean",
+    "version": "0.3.3",
+    "dependencies": {
+        "danialfarid-angular-file-upload": "1.4.0"
+    }
+}
