@@ -5,4 +5,10 @@
     <div data-ng-repeat="img in images">
         <img data-ng-src="{{img.src}}" alt="">
     </div>
+    <div data-ng-show="files.length">
+        Download:
+        <div data-ng-repeat="file in files">
+            <a data-ng-href="{{file.src}}">{{file.name}}</a>
+        </div>
+    </div>
 </div>

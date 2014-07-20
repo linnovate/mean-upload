@@ -4,6 +4,7 @@ angular.module('mean.mean-upload').controller('MeanUploadController', ['$scope',
     function($scope, Global, MeanUpload) {
         $scope.global = Global;
         $scope.images = [];
+        $scope.files = [];
         $scope.package = {
             name: 'mean-upload'
         };
@@ -13,6 +14,8 @@ angular.module('mean.mean-upload').controller('MeanUploadController', ['$scope',
         $scope.uploadFileCallback = function(file) {
             if (file.type.indexOf('image') !== -1)
                 $scope.images.push(file);
+            else
+                $scope.files.push(file);
         };
 
         $scope.uploadFinished = function(files) {
