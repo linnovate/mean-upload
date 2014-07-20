@@ -31,8 +31,8 @@ MeanUpload.register(function(app, auth, database) {
 
     //We are adding a link to the main menu for all authenticated users
     MeanUpload.menus.add({
-        title: 'meanUpload example page',
-        link: 'meanUpload example page',
+        title: 'Mean upload help page',
+        link: 'Mean upload help page',
         roles: ['authenticated'],
         menu: 'main'
     });

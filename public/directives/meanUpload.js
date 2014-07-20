@@ -9,7 +9,7 @@ angular.module('mean.mean-upload').directive('meanUpload', function($upload) {
             uploadFileCallback: '&'
         },
         restrict: 'E',
-        replace: true,
+        replace: false,
         link: function($scope, element, attrs) {
             $scope.onFileSelect = function($files) {
                 var files = [];
