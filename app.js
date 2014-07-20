@@ -16,14 +16,14 @@ MeanUpload.register(function(app, auth, database) {
     //We enable routing. By default the Package Object is passed to the routes
     MeanUpload.routes(app, auth, database);
 
-    MeanUpload.aggregateAsset('js', '/packages/mean-upload/public/assets/lib/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js', {
+    MeanUpload.aggregateAsset('js', '/node_modules/mean-upload/public/assets/lib/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js', {
         absolute: true
     });
-    MeanUpload.aggregateAsset('js', '/packages/mean-upload/public/assets/lib/danialfarid-angular-file-upload/dist/angular-file-upload.min.js', {
+    MeanUpload.aggregateAsset('js', '/node_modules/mean-upload/public/assets/lib/danialfarid-angular-file-upload/dist/angular-file-upload.min.js', {
         absolute: true
     });
 
-    MeanUpload.aggregateAsset('css', '/packages/mean-upload/public/assets/css/meanUpload.css', {
+    MeanUpload.aggregateAsset('css', '/node_modules/mean-upload/public/assets/css/meanUpload.css', {
         absolute: true
     });
 
