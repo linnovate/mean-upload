@@ -2,7 +2,7 @@
 
 angular.module('mean.mean-upload').directive('meanUpload', function($upload) {
     return {
-        templateUrl: 'mean-upload/directives/views/meanUpload.html',
+        templateUrl: 'mean-upload/views/directives/meanUpload.html',
         scope: {
             fileDest: '=',
             uploadCallback: '&',
