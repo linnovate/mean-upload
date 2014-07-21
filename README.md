@@ -13,9 +13,12 @@ uploadFinished : Which is fired when All of the files have been uploaded.
 ### Usage
 To use is just integrate the next directive in to your angular view...
 
-<pre>
-<mean-upload file-dest="'/files/photos/'"upload-callback="uploadFinished(files)"upload-file-callback="uploadFileCallback(file)"></mean-upload>
+```
+<mean-upload file-dest="'/files/photos/'"
+upload-callback="uploadFinished(files)"
+upload-file-callback="uploadFileCallback(file)">
+</mean-upload>
 <div data-ng-repeat="img in images">
     <img data-ng-src="{{img.src}}" alt="">
 </div>
-</pre>
+```
