@@ -2,17 +2,18 @@ Mean-upload lets you upload multiple files to your mean.io based app and use the
 The package provides a directive called mean-upload which renders the file picker.
 
 ### Installation
-just go to the root of your meanio site and run:
-mean instal mean-uplaod
+In the root of your meanio site, run:
+```
+mean install mean-uplaod
+```
 
 ### Callbacks
 The package provides two callbacks:
-uploadFileCallback: Which is fired when ever each file is successfuly uploaded
-uploadFinished : Which is fired when All of the files have been uploaded.
+- uploadFileCallback: Fires when each file is successfuly uploaded
+- uploadFinished: Fires once All of the files have been uploaded.
 
 ### Usage
-To use is just integrate the next directive in to your angular view...
-
+To use it just integrate the folowing directive in to your angular view...
 ```
 <mean-upload file-dest="'/packages/files/'"
 upload-callback="uploadFinished(files)"
