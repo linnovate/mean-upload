@@ -25,7 +25,7 @@ example or checkout <a href="https://gist.github.com/liorkesos/49172a11da1164cfb
     <br/><br/>
     The mean upload package adds to objects to it's scope - <strong>images</strong> and <strong>files</strong>.
     <p>Upload another one now:</p>
-    <mean-upload file-dest="'/packages/photos/'" upload-callback="uploadFinished(files)" upload-file-callback="uploadFileCallback(file)"></mean-upload>
+    <mean-upload file-dest="'/packages/photos/'" upload-drag-drop="true" upload-callback="uploadFinished(files)" upload-file-callback="uploadFileCallback(file)"></mean-upload>
     <p>The example above generates the following json which can be used by your
     own package:</p>
     <div data-ng-repeat="file in files">
