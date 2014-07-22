@@ -15,7 +15,7 @@ To use is just integrate the next directive in to your angular view...
 
 ```
 <mean-upload file-dest="'/packages/files/'"
-upload-callback="uploadFinished(files)"
+upload-drag-drop="true" upload-callback="uploadFinished(files)"
 upload-file-callback="uploadFileCallback(file)">
 </mean-upload>
 <div data-ng-repeat="img in images">
