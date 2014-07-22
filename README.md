@@ -3,7 +3,7 @@ The package provides a directive called mean-upload which renders the file picke
 
 ### Installation
 just go to the root of your meanio site and run:
-mean instal mean-uplaod
+mean instal mean-upload
 
 ### Callbacks
 The package provides two callbacks:
