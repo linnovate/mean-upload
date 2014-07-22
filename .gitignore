@@ -1,2 +1,7 @@
 node_modules/
 /public/assets/lib
+.DS_Store
+.nodemonignore
+npm-debug.log
+.bower-*/
+.idea/
