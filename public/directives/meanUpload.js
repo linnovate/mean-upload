@@ -14,9 +14,16 @@ angular.module('mean.mean-upload').directive('meanUpload', function($upload) {
             $scope.onFileSelect = function($files) {
                 var files = [];
                 $scope.files = $files;
+                //If they specified an allows attribute, turn it into a regex
+                var typeMatch = (angular.isDefined(attrs.allow))? new RegExp(attrs.allow): null;
                 //$files: an array of files selected, each file has name, size, and type.
                 for (var i = 0; i < $files.length; i++) {
                     var file = $files[i];
+                    //If there is a regex, test it
+                    if (typeMatch && !typeMatch.test(file.type)) {
+                        console.log('File of type ' + file.type + ' is not allowed');
+                        continue;
+                    }
                     $scope.upload = $upload.upload({
                         url: 'meanUpload/upload',
                         headers: {
