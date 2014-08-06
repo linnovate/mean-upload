@@ -19,7 +19,7 @@ angular.module('mean.mean-upload').directive('meanUpload', function($upload) {
                 if (angular.isDefined(attrs.allow)) {
                     list = attrs.allow.split(',');
                     //If the list is a length of one, check to see if it is a regex
-                    var checkRegex = /\/(.+)\/([gimy]*)$/;
+                    var checkRegex = /^\/(.+)\/([gimy]*)$/;
                     if (list.length === 1 && checkRegex.test(list[0])) {
                         var matches = checkRegex.exec(list[0]);
                         typeMatch = new RegExp(matches[1], matches[2]);
