@@ -25,6 +25,6 @@ upload-file-callback="uploadFileCallback(file)">
 ```
 
 ### Directive attributes
-file-dest = Default destination on server to upload the files to
-upload-callback = Default name of all files uploaded callback
-upload-file-callback = Default name for each file upload completion
+- `file-dest` Default destination on server to upload the files to.
+- `upload-callback` Default name of all files uploaded callback.
+- `upload-file-callback` Default name for each file upload completion.
