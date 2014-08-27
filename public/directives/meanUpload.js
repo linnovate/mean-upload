@@ -5,12 +5,23 @@ angular.module('mean.mean-upload').directive('meanUpload', function($upload) {
         templateUrl: 'mean-upload/views/directives/meanUpload.html',
         scope: {
             fileDest: '=',
+            uploadDragDrop: '=',
             uploadCallback: '&',
             uploadFileCallback: '&'
         },
         restrict: 'E',
         replace: false,
         link: function($scope, element, attrs) {
+
+            //show drop zone
+            $scope.dragAndDrop = function() {
+                if ($scope.uploadDragDrop === true) {
+                    return true;
+                }  else {
+                    return false;
+                }
+            };
+
             $scope.onFileSelect = function($files) {
                 var files = [];
                 $scope.files = $files;
