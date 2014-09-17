@@ -3,9 +3,10 @@
 /*
  * Defining the Package
  */
-var Module = require('meanio').Module;
-
-var MeanUpload = new Module('mean-upload');
+var Module = require('meanio').Module,
+    MeanUpload = new Module('mean-upload'),
+    config = require('meanio').loadConfig(),
+    express = require('express');
 
 /*
  * All MEAN packages require registration
@@ -16,15 +17,15 @@ MeanUpload.register(function(app, auth, database) {
     //We enable routing. By default the Package Object is passed to the routes
     MeanUpload.routes(app, auth, database);
 
-    MeanUpload.aggregateAsset('js', '/node_modules/mean-upload/public/assets/lib/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js', {
-        absolute: true
+    MeanUpload.aggregateAsset('js', '../lib/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js', {
+        absolute: false
     });
-    MeanUpload.aggregateAsset('js', '/node_modules/mean-upload/public/assets/lib/danialfarid-angular-file-upload/dist/angular-file-upload.min.js', {
-        absolute: true
+    MeanUpload.aggregateAsset('js', '../lib/danialfarid-angular-file-upload/dist/angular-file-upload.min.js', {
+        absolute: false
     });
 
-    MeanUpload.aggregateAsset('css', '/node_modules/mean-upload/public/assets/css/meanUpload.css', {
-        absolute: true
+    MeanUpload.aggregateAsset('css', '../css/meanUpload.css', {
+        absolute: false
     });
 
     MeanUpload.angularDependencies(['angularFileUpload']);
@@ -36,6 +37,8 @@ MeanUpload.register(function(app, auth, database) {
         roles: ['authenticated'],
         menu: 'main'
     });
+
+    app.use('/files/public', express.static(config.root + '/files/public'));
 
     /**
     //Uncomment to use. Requires meanio@0.3.7 or above

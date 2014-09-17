@@ -3,17 +3,18 @@
 var fs = require('fs'),
     config = require('meanio').loadConfig(),
     mkdirOrig = fs.mkdir,
+    directory = config.root + '/files/public',
     osSep = '/';
 
 
 function rename(file, dest, user, callback) {
-    fs.rename(file.path, config.root + dest + file.name, function(err) {
+    fs.rename(file.path, directory + dest + file.name, function(err) {
         if (err) throw err;
         else
             callback({
                 success: true,
                 file: {
-                    src: dest + file.name,
+                    src: '/files/public' + dest + file.name,
                     name: file.name,
                     size: file.size,
                     type: file.type,
@@ -53,7 +54,7 @@ function mkdir_p(path, callback, position) {
 }
 
 exports.upload = function(req, res) {
-    var path = config.root + req.body.dest;
+    var path = directory + req.body.dest;
     if (!fs.existsSync(path)) {
         mkdir_p(path, function(err) {
             rename(req.files.file, req.body.dest, req.user, function(data) {
