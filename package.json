@@ -1,20 +1,27 @@
 {
-    "name": "mean-upload",
-    "version": "0.0.1",
-    "description": "Some description of mean-upload",
-    "author": {
-        "name": "mean scaffold"
-    },
-    "mean": "0.3.3",
-    "engines": {
-        "node": "0.10.x",
-        "npm": "1.4.x"
-    },
-    "scripts": {
-        "postinstall": "node ../../node_modules/bower/bin/bower install"
-    },
-    "dependencies": {
-        "connect-multiparty": "latest"
-    },
-    "license": "MIT"
+  "name": "mean-upload",
+  "version": "0.0.2",
+  "description": "Some description of mean-upload",
+  "author": {
+    "name": "Orit Persik"
+  },
+  "mean": "0.3.3",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "connect-multiparty": "latest",
+    "mean-health": "~0.1.2"
+  },
+  "license": "MIT",
+  "readme": "README: meanUpload\n\n__Not ready to be used!!! __\n",
+  "readmeFilename": "README.md",
+  "_id": "mean-upload@0.0.1",
+  "_shasum": "0758172db3da1c22c1db9c73293cfc84f923fbff",
+  "_from": "https://github.com/linnovate/mean-upload/tarball/master",
+  "_resolved": "https://github.com/linnovate/mean-upload/tarball/master"
 }

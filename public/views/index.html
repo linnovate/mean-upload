@@ -1,8 +1,80 @@
-<div class="" data-ng-controller="MeanUploadController">
-    <h1>Example view from your new awesome package</h1>
-    <h2>Package: {{package.name}}</h2>
-    <mean-upload file-dest="'/packages/photos/'" upload-callback="uploadFinished(files)" upload-file-callback="uploadFileCallback(file)" crop-img></mean-upload>
-    <div data-ng-repeat="img in images">
-        <img data-ng-src="{{img.src}}" alt="">
+<div data-ng-controller="MeanUploadController">
+<tabset>
+  <tab heading="Overview">
+    <h1>Mean upload package guidelines</h1>
+    <h2>Overview</h2>
+    <p>Mean upload works by providing an angular directive called <strong>mean-upload</strong></p>
+    <p>To use it simply insert the next code in to your application:</br>
+      Start with a <strong>mean-upload</strong> and immidiatly append the next options:<br/>
+      <div class="alert alert-info" role="alert">
+       <strong>file-dest="'/files/photos/'":</strong>
+      Destination path to save the files.<br/>
+       <strong>upload-file-callback="uploadFileCallback(file):</strong>
+       callback when one each one of the file completes the upload<br/>
+       <strong>upload-callback="uploadFinished(files)":</strong><
+       Callback fired when the all of the files have been uploaded.<br/>
+     </div>
+      To see the whole HTML snippet in action inspect element the following
+example or checkout <a href="https://gist.github.com/liorkesos/49172a11da1164cfb419">this gist</a>
+    </p>
+  </tab>
+
+  <tab heading="Example">
+  <div class="col-md-4 col-lg-8 example-block alt">
+
+    <br/><br/>
+    The mean upload package adds to objects to it's scope - <strong>images</strong> and <strong>files</strong>.
+    <p>Upload another one now:</p>
+    <mean-upload file-dest="'/packages/photos/'" upload-callback="uploadFinished(files)" upload-file-callback="uploadFileCallback(file)"></mean-upload>
+    <p>The example above generates the following json which can be used by your
+    own package:</p>
+    <div data-ng-repeat="file in files">
+      {{syntaxHightlight(file)}}
     </div>
+</div>
+  <div class="greyside col-md-8 col-lg-4 example-block">
+    <br/><br/>
+
+
+    <p style="font-size:1.2em;"><span style="font-size:1.5em">{{images.length}}</span> images and <span style="font-size:1.5em">{{files.length}}</span> files have been loaded:</p>
+    <div data-ng-show="files.length">
+
+<h4>Files</h4>
+    <p>This is an example of how we iterate on the files and provide links to download them</p>
+        <strong>Download:</strong>
+        <div data-ng-repeat="file in files">
+            <a data-ng-href="{{file.src}}">{{file.name}} is {{file.size}} bytes </a>
+        </div>
+    </div>
+
+<div data-ng-show="images.length">
+  <h4>Images</h4>
+Now if you Add a bit of angular-ui bootstrap magic you can show the images ....
+    <div style="height: 305px">
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.image}}" style="margin:auto;">
+        <div class="carousel-caption">
+          <h4>Slide {{$index}}</h4>
+          <p>{{slide.text}}</p>
+        </div>
+      </slide>
+    </carousel>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      The gallery above can be controlled using the textboxt -
+    </div>
+    <div class="col-md-6">
+      The Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
+      <br />Enter a negative number to stop the interval.
+    </div>
+  </div>
+
+</div>
+
+
+  </tab>
+
+  </tabset>
 </div>
